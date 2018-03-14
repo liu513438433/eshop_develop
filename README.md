@@ -1,21 +1,31 @@
-# eshop
+#day01
+	##完成内容：1.使用vue-cli创建Vue(SPA)应用
+		    2.src
+			|-- components------------非路由组件文件夹
+				|-- FooterGuide---------------底部组件文件夹
+				|-- FooterGuide.vue--------底部组件vue
+     			|-- pages-----------------路由组件文件夹
+				|-- Msite---------------首页组件文件夹
+					|-- Msite.vue--------首页组件vue
+				|-- Class----------------分类组件文件夹
+					|-- Class.vue---------分类组件vue
+				|-- Cart--------------购物车组件文件夹
+					|-- Cart.vue-------购物车组件vue
+		 		|-- My_pet--------------个人组件文件夹
+					|-- My_pet.vue-------个人组件vue
+		        |-- App.vue---------------应用根组件vue
+		        |-- main.js---------------应用入口js
 
-> A Vue.js project
+		    3.搭载vue-router实现底部切换导航按钮
+		    4.完成e宠商城主页的广告部分，商城头部导航部分
+		    5.完成logo轮播图
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+	##遇到的问题：1.主页页面的广告关闭会影响其结构
+		      2.css预编译工具stylus出现各种各样的css原生中没出现的问题
+		      3.页面布局不熟练，遗忘过多
 
-# build for production with minification
-npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+	##解决方法：  1.解决方法是慢慢回忆  慢慢熟练

@@ -5,6 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Store from './store'
+import  './common/css/reset.css'
 
 /*Vue.config.productionTip = false*/
 
@@ -13,4 +14,5 @@ new Vue({
   el: '#app',
   render:h => h(App),
   Store,
+  router
 })
