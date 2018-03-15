@@ -4,6 +4,8 @@ import Msite from '../pages/msite/msite'
 import Class from '../pages/class/class'
 import Cart from '../pages/cart/cart'
 import My_pet from '../pages/my_pet/my_pet'
+import Category from '../pages/category/category'
+import Brand from '../pages/brand/brand'
 
 Vue.use(Router)
 
@@ -21,7 +23,30 @@ export default new Router({
       component:Class,
       meta:{
         showFooter:true
-      }
+      },
+      children:[
+        {
+          path:'/class/category',
+          component:Category,
+          meta:{
+            showFooter:true
+          }
+        },
+        {
+          path:'/class/brand',
+          component:Brand,
+          meta:{
+            showFooter:true
+          }
+        },
+        {
+          path:'/class/',
+          redirect:'/class/category',
+          meta:{
+            showFooter:true
+          }
+        },
+      ]
     },
     {
       path:'/Cart',

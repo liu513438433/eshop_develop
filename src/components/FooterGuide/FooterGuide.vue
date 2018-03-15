@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer_guide border-1px">
+  <footer class="footer_guide">
     <div class="guide_item" @click="goto('/msite')" :class="{on:isCurrent('/msite')}">
       <span class="item_icon">
         <i class="iconfont icon-shouyedianpujishishangcheng"></i>
@@ -49,8 +49,9 @@
     bottom 0
     background-color #fff
     width 100%
-    height 50px
+    height 45px
     display flex
+    border-top 1px solid #e7e7e7
     .guide_item
       display flex
       flex 1
@@ -58,13 +59,13 @@
       flex-direction column
       align-items center
       justify-content center
-      margin 5px
+      margin 4px
       color #999999
       &.on
         color #02a774
       span
-        font-size 12px
-        margin-top 2px
+        font-size 10px
+        margin-top 3px
         margin-bottom 2px
         .iconfont
           font-size 22px
