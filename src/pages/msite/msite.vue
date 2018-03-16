@@ -430,6 +430,7 @@
   import Swiper from 'swiper'
   import '../../common/css/swiper.css'
   import BScroll from 'better-scroll'
+  import {mapState} from 'vuex'
   export default {
     data(){
       return{
@@ -438,38 +439,43 @@
       }
     },
     mounted(){
-      this.$nextTick(()=>{
-        let navBS = new BScroll('.find_container',{
-          scrollX:true,
-          click:true
+      this.$store.dispatch('getHomepages',()=>{
+        this.$nextTick(()=>{
+          let navBS = new BScroll('.find_container',{
+            scrollX:true,
+            click:true
+          })
+
+          let swiper = new Swiper('.swiper-container',{
+            loop: true,
+            autoplay:{
+              delay:2500,
+              disableOnInteraction:false
+            },
+            pagination: {
+              el: '.swiper-pagination'
+            }
+          })
+
+          new BScroll('.cuxiao_container_slide',{
+            scrollX:true,
+            click:true
+          })
+
+          new BScroll('.main_container',{
+            scrollX:true,
+            click:true
+          })
+
+          setInterval(()=>{
+            this.changeDog()
+          },1500)
+
         })
-
-        let swiper = new Swiper('.swiper-container',{
-          loop: true,
-          autoplay:{
-            delay:2500,
-            disableOnInteraction:false
-          },
-          pagination: {
-            el: '.swiper-pagination'
-          }
-        })
-
-        new BScroll('.cuxiao_container_slide',{
-          scrollX:true,
-          click:true
-        })
-
-        new BScroll('.main_container',{
-          scrollX:true,
-          click:true
-        })
-
-        setInterval(()=>{
-          this.changeDog()
-        },1500)
-
       })
+    },
+    computed:{
+      ...mapState(['homepages'])
     },
     methods:{
       closebtn(){

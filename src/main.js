@@ -4,8 +4,9 @@ import Vue from 'vue'
 
 import App from './App'
 import router from './router'
-import Store from './store'
+import store from './store'
 import  './common/css/reset.css'
+import './mock/MockServer'
 
 /*Vue.config.productionTip = false*/
 
@@ -13,6 +14,6 @@ import  './common/css/reset.css'
 new Vue({
   el: '#app',
   render:h => h(App),
-  Store,
+  store,
   router
 })

@@ -1,29 +1,29 @@
 <template>
   <footer class="footer_guide">
-    <div class="guide_item" @click="goto('/msite')" :class="{on:isCurrent('/msite')}">
+    <router-link tag="div" class="guide_item" to="/msite">
       <span class="item_icon">
         <i class="iconfont icon-shouyedianpujishishangcheng"></i>
       </span>
       <span>首页</span>
-    </div>
-    <div class="guide_item" @click="goto('/class')" :class="{on:isCurrent('/class')}">
+    </router-link>
+    <router-link tag="div" class="guide_item" to="/class">
       <span class="item_icon">
         <i class="iconfont icon-fenlei"></i>
       </span>
       <span>分类</span>
-    </div>
-    <div class="guide_item" @click="goto('/cart')" :class="{on:isCurrent('/cart')}">
+    </router-link>
+    <router-link tag="div" class="guide_item" to="/cart">
       <span class="item_icon">
         <i class="iconfont icon-icon22fuzhi"></i>
       </span>
       <span>购物车</span>
-    </div>
-    <div class="guide_item" @click="goto('/my_pet')" :class="{on:isCurrent('/my_pet')}">
+    </router-link>
+    <router-link tag="div" class="guide_item" to="/my_pet">
       <span class="item_icon">
         <i class="iconfont icon-chongwu"></i>
       </span>
       <span>我的E宠</span>
-    </div>
+    </router-link>
   </footer>
 </template>
 
@@ -52,7 +52,7 @@
     height 45px
     display flex
     border-top 1px solid #e7e7e7
-    .guide_item
+    div
       display flex
       flex 1
       text-align center
@@ -61,7 +61,7 @@
       justify-content center
       margin 4px
       color #999999
-      &.on
+      &.router-link-active
         color #02a774
       span
         font-size 10px

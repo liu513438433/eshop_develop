@@ -2,19 +2,10 @@
   <div id="category">
     <div class="category_left">
       <ul>
-        <li>为您推荐</li>
-        <li>狗狗主粮</li>
-        <li class="on">狗狗零食</li>
-        <li>狗狗服饰</li>
-        <li>狗狗窝垫</li>
-        <li>狗狗生活</li>
-        <li>狗狗玩具</li>
-        <li>狗狗保健</li>
-        <li>狗狗医疗</li>
-        <li>狗狗牵引</li>
-        <li>狗狗美容</li>
-        <li>狗狗周边</li>
-        <li>狗狗清洁</li>
+        <li v-for="(list,index) in category[0]" :key="index"
+            @click="change(index)" :class="{on:index===dabian}">
+          {{list.name}}
+        </li>
       </ul>
     </div>
     <div class="category_right">
@@ -22,22 +13,38 @@
         <div class="category_goods">
           <a href="javascript:">
             <div class="goods_header">
-              <span>狗狗生活</span>
+              <span>{{category[0][dabian].name}}</span>
               <img src="../../common/images/allGoods.png" alt="">
             </div>
           </a>
           <ul>
-            <li>
+            <li v-for="(item,index) in category[1][dabian][0].list" :key="index">
               <a href="javascript:">
                 <div class="goods_item">
-                  <img src="../../common/images/category1.jpg" alt="">
-                  <p>狗狗餐具</p>
+                  <img :src="item.photo" alt="">
+                  <p>{{item.name}}</p>
                 </div>
               </a>
             </li>
           </ul>
         </div>
-        <div class="category_brand"></div>
+        <div class="category_brand" v-if="category[1][dabian][1]">
+          <a href="javascript:">
+            <div class="brand_header">
+              <span>热门品牌</span>
+            </div>
+          </a>
+          <ul>
+            <li v-for="(item,index) in category[1][dabian][1].list" :key="index">
+              <a href="javascript:">
+                <div class="brand_item">
+                  <img :src="item.logo" alt="">
+                </div>
+                <p>{{item.name}}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -45,14 +52,50 @@
 
 <script>
   import BScroll from 'better-scroll'
+  import {mapState} from 'vuex'
   export default {
+    data(){
+      return{
+        leftArr:[
+          '为您推荐',
+          '狗狗主粮',
+          '狗狗零食',
+          '狗狗服饰',
+          '狗狗窝垫',
+          '狗狗生活',
+          '狗狗玩具',
+          '狗狗保健',
+          '狗狗医疗',
+          '狗狗牵引',
+          '狗狗美容',
+          '狗狗周边',
+          '狗狗清洁',
+        ],
+        dabian:5
+      }
+    },
     mounted(){
-      this.$nextTick(()=>{
-        new BScroll('.category_left',{
-          click:true,
-          bounce:false
+      console.log(this.$store)
+      this.$store.dispatch('getCategory',()=>{
+        this.$nextTick(()=>{
+          new BScroll('.category_left',{
+            click:true,
+            bounce:false
+          })
+          new BScroll('.category_right',{
+            click:true,
+            bounce:false
+          })
         })
       })
+    },
+    computed:{
+      ...mapState(['category'])
+    },
+    methods:{
+      change(index){
+        this.dabian = index
+      }
     }
   }
 </script>
@@ -70,6 +113,7 @@
       height 100%
       overflow hidden
       width 70px
+      flex-shrink 0
       ul
         background-color #fff
         li
@@ -86,6 +130,80 @@
       height 100%
       overflow hidden
       flex-grow 1
-    .category_goods
-      background-color #fff
+      border-top 5px solid #f3f4f5
+      padding-left 5px
+      .category_container
+        .category_goods
+          background-color #fff
+          padding 5px 5px 20px
+          border-top 1px solid #f3f4f5
+          .goods_header
+            margin-top 10px
+            padding-left 5px
+            span
+              font-size 12px
+            img
+              height 10px
+              float right
+              margin-top 5px
+              padding-right 5px
+          ul
+            clearFix()
+            li
+              width 33.33%
+              padding 0 5px
+              margin-top 10px
+              float left
+              img
+                width 100%
+              p
+                font-size 13px
+                text-align center
+                color black
+                height 20px
+                margin-top 10px
+        .category_brand
+          background-color #fff
+          padding 5px 5px 20px
+          border-top 1px solid #f3f4f5
+          .brand_header
+            margin-top 10px
+            padding-left 5px
+            span
+              font-size 12px
+          ul
+            clearFix()
+            li
+              width 50%
+              padding 0 5px
+              margin-top 10px
+              float left
+              &:last-of-type
+                .brand_item
+                  background-color: rgba(0,0,0,0)
+                  img
+                    height 65px
+                    margin-top -6px
+              .brand_item
+                border 1px solid #f3f4f5
+                text-align center
+                height 55px
+                position relative
+                overflow hidden
+                img
+                  height 45px
+                  max-width 100%
+                  /*margin-top 4px*/
+                  margin 4px auto 0
+                  position absolute
+                  left 0
+                  right 0
+              p
+                font-size 12px
+                text-align center
+                color black
+                height 20px
+                margin-top 8px
+                white-space nowrap
+                text-overflow ellipsis
 </style>
