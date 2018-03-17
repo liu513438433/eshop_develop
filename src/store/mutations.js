@@ -1,4 +1,4 @@
-import {RECEIVE_BRAND,RECEIVE_CATEGORY,RECEIVE_HOMEPAGES} from './mutation-types'
+import {RECEIVE_BRAND,RECEIVE_CATEGORY,RECEIVE_HOMEPAGES,RECEIVE_ALLBRAND} from './mutation-types'
 export default {
   [RECEIVE_BRAND](state,{brand}){
     state.brand = brand
@@ -8,5 +8,8 @@ export default {
   },
   [RECEIVE_HOMEPAGES](state,{homepages}){
     state.homepages = homepages
+  },
+  [RECEIVE_ALLBRAND](state,{allbrand}){
+    state.allbrand = allbrand
   },
 }

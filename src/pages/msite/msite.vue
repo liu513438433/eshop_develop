@@ -6,7 +6,7 @@
     </span>
     <div class="appdownimg">
       <a href="javascript:">
-        <img src="https://img2.epetbar.com/nowater/2017-12/13/18/c63b6e6cf483cbb61196f658920a9d6e.jpg@!water" alt="">
+        <img src="https://img2.epetbar.com/nowater/2017-12/13/18/c63b6e6cf483cbb61196f658920a9d6e.jpg@!water">
       </a>
     </div>
   </div>
@@ -31,7 +31,7 @@
             </a>
           </p>
           <a href="javascript:" class="category">
-            <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png" alt="">
+            <img src="//static.epetbar.com/static_web/wap/src/images/mydope.png">
           </a>
         </div>
       </div>
@@ -50,373 +50,34 @@
       </div>
     </div>
     <div class="main_container">
-      <div class="content_wrap" :class="{on_bottom:isShow}">
-        <div class="change">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="../../common/images/0.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="../../common/images/1.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="../../common/images/2.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="../../common/images/3.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="../../common/images/4.jpg" alt="">
-              </div>
-              <div class="swiper-slide">
-                <img src="../../common/images/5.jpg" alt="">
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <div class="baseImg">
-            <img src="../../common/images/dog.jpg" alt="">
-          </div>
-        </div>
-        <div class="advantage">
-          <ul class="advantage_container">
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-            <li><img src="../../common/images/666.jpg"></li>
-          </ul>
-        </div>
+      <div class="content_wrap" :class="{on_bottom:isShow}" v-if="homepages[0]">
+        <slide :imgArr="homepages[0].value"/>
+        <img :src="homepages[1].value[0].image" style="width: 100%">
+        <advantage :imgArr="homepages[2].menus"/>
         <div class="cuxiao">
-          <div class="cuxiao_header">
-            <img src="../../common/images/black1.jpg">
-          </div>
-          <div class="cuxiao_top">
-            <div class="cuxiao_logo">
-              <img src="../../common/images/fengqiang.png">
-            </div>
-            <div class="cuxiao_more">
-              <img src="../../common/images/more.png" alt="">
-            </div>
-            <div class="cuxiao_time">
-              <span>本场结束</span>
-              <span class="cuxiao_border">21</span>
-              <span>:</span>
-              <span class="cuxiao_border">00</span>
-            </div>
-          </div>
-          <div class="cuxiao_container_slide">
-            <div class="cuxiao_slide">
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-              <div class="cuxiao_slide_wraper">
-                <img src="../../common/images/shop.jpg" alt="">
-                <div class="cuxiao_price">￥4.80</div>
-                <div class="cuxiao_cheaper">省43.20</div>
-              </div>
-            </div>
-          </div>
+          <img :src="homepages[3].value[0].image" style="width: 100%">
+          <cuxiao_change :imgArr="homepages[4].goods"/>
           <div class="gif">
-            <img src="../../common/images/gif_top.jpg" alt="">
-            <img src="../../common/images/slide.gif" alt="">
-            <img src="../../common/images/gif_bottom.jpg" alt="">
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/support1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/support2.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/support3.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/support4.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <img src="../../common/images/black2.jpg" alt="">
-            <div class="change">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="../../common/images/0.jpg" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="../../common/images/1.jpg" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="../../common/images/2.jpg" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="../../common/images/3.jpg" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="../../common/images/4.jpg" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="../../common/images/5.jpg" alt="">
-                  </div>
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
-            <img src="../../common/images/black3.jpg" alt="">
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/long1.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <img src="../../common/images/black3.jpg" alt="">
-            <img src="../../common/images/dog2.jpg" alt="">
-            <img src="../../common/images/black3.jpg" alt="">
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/3-1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/3-2.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/3-3.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <img src="../../common/images/black3.jpg" alt="">
-            <div class="image_support">
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/bottom1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/bottom1.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/bottom1.jpg" alt="">
-                </a>
-              </div>
-              <div class="item">
-                <a href="javascript:">
-                  <img src="../../common/images/bottom2.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/bottom2.jpg" alt="">
-                </a>
-                <a href="javascript:">
-                  <img src="../../common/images/bottom2.jpg" alt="">
-                </a>
-              </div>
-            </div>
+          <img :src="homepages[5].value[0].image">
+          <img :src="homepages[6].value[0].image">
+          <img :src="homepages[7].value[0].image">
+          <image_support :imgArr="homepages[8].content_images"/>
+          <img :src="homepages[9].value[0].image">
+          <slide :imgArr="homepages[10].value"/>
+          <img :src="homepages[11].value[0].image">
+          <image_support :imgArr="homepages[12].content_images"/>
+          <image_support :imgArr="homepages[13].content_images"/>
+          <image_support :imgArr="homepages[14].content_images"/>
+          <image_support :imgArr="homepages[15].content_images"/>
+          <image_support :imgArr="homepages[16].content_images"/>
+          <img :src="homepages[17].value[0].image">
+          <img :src="homepages[18].value[0].image">
+          <img :src="homepages[19].value[0].image">
+          <image_support :imgArr="homepages[20].content_images"/>
+          <img :src="homepages[21].value[0].image">
+          <image_support :imgArr="homepages[22].content_images"/>
           </div>
-          <div class="footer">
-            <div class="footer_line1">
-            <span class="bt">
-              <a href="javascript:">触屏版</a>
-            </span>
-              <span>
-              <a href="javascript:">手机客户端</a>
-            </span>
-              <span>
-              <a href="javascript:">关于我们</a>
-            </span>
-              <span>
-              <a href="javascript:">联系我们</a>
-            </span>
-            </div>
-            <div class="footer_line2">
-              © wap.epet.com 版权：重庆易宠科技有限公司
-            </div>
-          </div>
+          <msite_footer/>
         </div>
       </div>
     </div>
@@ -428,9 +89,13 @@
 
 <script>
   import Swiper from 'swiper'
-  import '../../common/css/swiper.css'
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
+  import slide from '../../components/silde/slide'
+  import advantage from '../../components/advantage/advantage'
+  import cuxiao_change from '../../components/cuxiao_change/cuxiao_change'
+  import image_support from '../../components/image_support/image_support'
+  import msite_footer from '../../components/msite_footer/msite_footer'
   export default {
     data(){
       return{
@@ -446,7 +111,7 @@
             click:true
           })
 
-          let swiper = new Swiper('.swiper-container',{
+          /*let swiper = new Swiper('.swiper-container',{
             loop: true,
             autoplay:{
               delay:2500,
@@ -455,12 +120,7 @@
             pagination: {
               el: '.swiper-pagination'
             }
-          })
-
-          new BScroll('.cuxiao_container_slide',{
-            scrollX:true,
-            click:true
-          })
+          })*/
 
           new BScroll('.main_container',{
             scrollX:true,
@@ -470,7 +130,6 @@
           setInterval(()=>{
             this.changeDog()
           },1500)
-
         })
       })
     },
@@ -484,6 +143,13 @@
       changeDog(){
         this.dogChange = !this.dogChange
       }
+    },
+    components:{
+      slide,
+      advantage,
+      cuxiao_change,
+      image_support,
+      msite_footer
     }
   }
 </script>
@@ -602,128 +268,13 @@
           padding-top 87px
           &.on_bottom
             padding-bottom 46px
-          .change
-            .swiper-container
-              width 100%
-              .swiper-pagination-bullet
-                width 5px
-                height 5px
-                background-color #fff
-                opacity 0.8
-                &.swiper-pagination-bullet-active
-                  width 15px
-                  border-radius 18%
-                  transition all .5s
-              .swiper-wrapper
-                width 100%
-                .swiper-slide
-                  img
-                    width 100%
-                    display block
-            .baseImg
-              img
-                width 100%
-                display block
-          .advantage
-            width 100%
-            .advantage_container
-              display flex
-              flex-wrap wrap
-              li
-                width 20%
-                img
-                  width 100%
           .cuxiao
             font-size 14px
             background-color #fff
-            .cuxiao_header
-              img
-                width 100%
-            .cuxiao_top
-              clearFix()
-              margin 8px 10px
-              .cuxiao_logo
-                float left
-                margin-top 3px
-                img
-                  width 85px
-                  height 19px
-              .cuxiao_time
-                float right
-                .cuxiao_border
-                  border 1px lightgrey solid
-              .cuxiao_more
-                float right
-                margin -8px -15px 0 -7px
-                img
-                  height 34px
-            .cuxiao_container_slide
-              margin-bottom 10px
-              overflow hidden
-              width 100%
-              .cuxiao_slide
-                display flex
-                width 182%
-                .cuxiao_slide_wraper
-                  display flex
-                  flex-wrap nowrap
-                  flex-direction column
-                  align-items center
-                  text-align center
-                  img
-                    width 85px
-                  .cuxiao_price
-                    font-size 14px
-                    margin-top 5px
-                    color red
-                  .cuxiao_cheaper
-                    font-size 12px
-
             .gif
               background-color black
               img
                 width 100%
-              .change
-                .swiper-container
-                  width 100%
-                  .swiper-pagination-bullet
-                    width 5px
-                    height 5px
-                    background-color #fff
-                    opacity 0.8
-                    &.swiper-pagination-bullet-active
-                      width 15px
-                      border-radius 18%
-                      transition all .5s
-                  .swiper-wrapper
-                    width 100%
-                    .swiper-slide
-                      img
-                        width 100%
-                        display block
-              .image_support
-                margin-bottom 10px
-                display flex
-                .item_left
-                  width 50%
-          .footer
-            margin-top 14px
-            .footer_line1
-              font-size 14px
-              padding 15px 0 5px
-              text-align center
-              span
-                padding-right 10px
-                a
-                  color #333
-              .bt
-                a
-                  color red
-            .footer_line2
-              padding-bottom 25px
-              margin 0 10px
-              font-size 12px
-              text-align center
     .godog
       width 41px
       height 46px

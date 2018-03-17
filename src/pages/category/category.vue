@@ -3,22 +3,22 @@
     <div class="category_left">
       <ul>
         <li v-for="(list,index) in category[0]" :key="index"
-            @click="change(index)" :class="{on:index===dabian}">
+            @click="change(index)" :class="{on:index===active_index}">
           {{list.name}}
         </li>
       </ul>
     </div>
     <div class="category_right">
-      <div class="category_container">
+      <div class="category_container" v-if="category[1]">
         <div class="category_goods">
           <a href="javascript:">
             <div class="goods_header">
-              <span>{{category[0][dabian].name}}</span>
+              <span>{{category[0][active_index].name}}</span>
               <img src="../../common/images/allGoods.png" alt="">
             </div>
           </a>
           <ul>
-            <li v-for="(item,index) in category[1][dabian][0].list" :key="index">
+            <li v-for="(item,index) in category[1][active_index][0].list" :key="index">
               <a href="javascript:">
                 <div class="goods_item">
                   <img :src="item.photo" alt="">
@@ -28,14 +28,14 @@
             </li>
           </ul>
         </div>
-        <div class="category_brand" v-if="category[1][dabian][1]">
+        <div class="category_brand" v-if="category[1][active_index][1]">
           <a href="javascript:">
             <div class="brand_header">
               <span>热门品牌</span>
             </div>
           </a>
           <ul>
-            <li v-for="(item,index) in category[1][dabian][1].list" :key="index">
+            <li v-for="(item,index) in category[1][active_index][1].list" :key="index">
               <a href="javascript:">
                 <div class="brand_item">
                   <img :src="item.logo" alt="">
@@ -56,26 +56,10 @@
   export default {
     data(){
       return{
-        leftArr:[
-          '为您推荐',
-          '狗狗主粮',
-          '狗狗零食',
-          '狗狗服饰',
-          '狗狗窝垫',
-          '狗狗生活',
-          '狗狗玩具',
-          '狗狗保健',
-          '狗狗医疗',
-          '狗狗牵引',
-          '狗狗美容',
-          '狗狗周边',
-          '狗狗清洁',
-        ],
-        dabian:5
+        active_index:'5'*1
       }
     },
     mounted(){
-      console.log(this.$store)
       this.$store.dispatch('getCategory',()=>{
         this.$nextTick(()=>{
           new BScroll('.category_left',{
@@ -90,11 +74,11 @@
       })
     },
     computed:{
-      ...mapState(['category'])
+      ...mapState(['category']),
     },
     methods:{
       change(index){
-        this.dabian = index
+        this.active_index = index
       }
     }
   }

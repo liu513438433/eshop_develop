@@ -63,3 +63,4 @@ import ajax from './ajax'
 export const reqHomepages = () => ajax('/homepages')
 export const reqBrand = () => ajax('/brand')
 export const reqCategory = () => ajax('/category')
+export const reqAllbrand = () => ajax('/allbrand')

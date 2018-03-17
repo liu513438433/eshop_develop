@@ -16,4 +16,5 @@ todo Mock.mock('/info', {code: 0, data: data.info})  // {code: 0, data: info数�
 Mock.mock('/brand',{code:0,data:data.brand})
 Mock.mock('/homepages',{code:0,data:data.homePages})
 Mock.mock('/category',{code:0,data:data.categoryss})
+Mock.mock('/allbrand',{code:0,data:data.allbrand})
 // export default ???  没有需要暴露的东西

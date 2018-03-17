@@ -1,5 +1,6 @@
 export default {
   brand:[],
   category:[],
-  homepages:[]
+  homepages:[],
+  allbrand:[],
 }

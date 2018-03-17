@@ -7,6 +7,7 @@
       <div class="header_nav2">
         <router-link to="/class/brand">品牌</router-link>
       </div>
+      <div class="search_icon"><i class="iconfont icon-icon-test"></i></div>
     </header>
     <router-view/>
   </div>
@@ -33,10 +34,7 @@
       padding 0 15px
       border-bottom 1px solid #cdcdcd
       height 40px
-      /*position absolute
-      top 0
-      right 0
-      left 0*/
+      position relative
       div
         width 50%
         height 40px
@@ -56,6 +54,11 @@
         color red
         padding-bottom 9px
         border-bottom 2px solid red
+      .search_icon
+        position absolute
+        width 20px
+        top 0
+        right 10px
 
 
 </style>
